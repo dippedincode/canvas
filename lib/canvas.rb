@@ -1,8 +1,8 @@
 class Canvas
   attr_reader :canvas_array
 
-  def initialize
-    @canvas_array = Array.new(5){Array.new(5,'O')}
+  def initialize(rows, columns)
+    @canvas_array = Array.new(columns){Array.new(rows,'O')}
   end
 
 end
