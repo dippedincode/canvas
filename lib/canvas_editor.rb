@@ -45,27 +45,30 @@ class Command_Handler
   end
 
   def colour_pixel(comm_arr)
-    if (comm_arr.length == 4) && (comm_arr[3] =~ /[A-Z]/)
-      col = comm_arr[1].to_i
-      row = comm_arr[2].to_i
-      pixcol = comm_arr[3]
-      if (1..@canvas.columns).include?(col) && (1..@canvas.rows).include?(row)
-        @canvas.canvas_array[col - 1][row - 1] = pixcol
-        "Pixel at col = #{col} , row = #{row} now has colour #{pixcol}."
+    if @canvas
+      if (comm_arr.length == 4) && (comm_arr[3] =~ /[A-Z]/)
+        col = comm_arr[1].to_i
+        row = comm_arr[2].to_i
+        pixcol = comm_arr[3]
+        if (1..@canvas.columns).include?(col) && (1..@canvas.rows).include?(row)
+          @canvas.canvas_array[col - 1][row - 1] = pixcol
+          "Pixel at col = #{col} , row = #{row} now has colour #{pixcol}."
+        else
+          "Invalid coordinates for the L command, please try again."
+        end
       else
-        "Invalid coordinates for the L command, please try again."
+        "Wrong parameters to the L command, please try again."
       end
     else
-      "Wrong parameters to the L command, please try again."
+      "Canvas not created yet, nothing to clear."
     end
   end
-
 
   def clear_canvas
     if @canvas
       @canvas.canvas_array.fill('O')
     else
-      "Canvas not created yet, nothing to clear."
+      "Canvas not created yet, cannot add pixel."
     end
   end   
 
