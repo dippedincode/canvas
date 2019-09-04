@@ -2,7 +2,11 @@
 
 This is a Ruby program that gives you a character-based canvas editor in the command line.
 
-To run it, clone this repo and then change into the main directory and type
+To run it, clone this repo and then change into the main directory. Ensure that the file canvas_editor is executable by typing:
+```
+$ chmod +x .\lib\canvas_editor.rb
+```
+Then type:
 ```
 ./lib/canvas_editor.rb
 ```
