@@ -17,9 +17,11 @@ Welcome to the character-based canvas editor!
 Enter a command (? for help):
 ```
  
-Note that the canvas starts with coordinate (1,1) in the top left corner. In this example of a 5 x 6 canvas
-Pixel at row = 2 , column = 4 now colour W
-Pixel at row = 5 , column = 3 now colour T
+Note that the canvas starts with coordinate (1,1) in the top left corner. In the example below of a 5 x 6 canvas:
+
+The pixel at row = 2 , column = 4 is colour W
+
+The pixel at row = 5 , column = 3 is colour T
 ```
 O O O O O
 O O O W O
