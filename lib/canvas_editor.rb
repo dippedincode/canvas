@@ -14,6 +14,8 @@ class Command_Handler
       colour_pixel(comm_arr)
     when 'C' then
       clear_canvas
+    when '?' then
+      show_help
     when 'X' then "Bye!"
     else "Command not recognized, please try again."
     end
@@ -52,7 +54,7 @@ class Command_Handler
         pixcol = comm_arr[3]
         if (1..@canvas.columns).include?(col) && (1..@canvas.rows).include?(row)
           @canvas.canvas_array[col - 1][row - 1] = pixcol
-          "Pixel at col = #{col} , row = #{row} now has colour #{pixcol}."
+          "Pixel at row = #{col} , column = #{row} now has colour #{pixcol}."
         else
           "Invalid coordinates for the L command, please try again."
         end
@@ -73,6 +75,17 @@ class Command_Handler
     end
   end   
 
+  def show_help
+    puts "Canvas Help:"
+    puts "Type : I M N to create a canvas of M columns and N rows. M and N must be integer values between 1 and 250"
+    puts "Note that the canvas coordinates start with (1,1) in the top left corner"
+    puts "Type : S to show the canvas"
+    puts "Type : L X Y C to colour a pixel at coordinate (X,Y)"
+    puts "Type : C to clear the canvas"
+    puts "Type : ? to see Help - what you are seeing now"
+    puts "Type : X to exit the program"
+    puts "No other commands are supported at the moment"
+  end
 end
 
 
