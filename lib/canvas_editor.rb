@@ -66,9 +66,10 @@ class Command_Handler
 
   def clear_canvas
     if @canvas
-      @canvas.canvas_array.fill('O')
+      @canvas = Canvas.new(@canvas.columns, @canvas.rows)
+      "Canvas has been cleared."
     else
-      "Canvas not created yet, cannot add pixel."
+      "Canvas not created yet, cannot clear anything."
     end
   end   
 
